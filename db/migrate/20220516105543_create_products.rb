@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.string :part_number
       t.string :name
       t.string :unit
-      t.decimal :price
+      t.decimal :price, precision: 8, scale: 2
 
       t.timestamps
     end
