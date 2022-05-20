@@ -14,17 +14,11 @@
   </head>
 
   <body>
-    <% if notice.present? %>
-      <aside class="alert alert-info">
-        <%= flash[:notice] %>
-      </aside>
-    <% end %>
-    <% if alert.present? %>
-      <aside class="alert alert-danger">
-        <%= alert %>
-      </aside>
-    <% end %>
-
-    <%= yield %>
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: name %>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

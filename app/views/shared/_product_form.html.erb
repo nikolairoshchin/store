@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 offset-md-2">
+			<%= form_for(@product, data: { turbo: false }) do |f| %>
+				<%= render 'shared/error_messages' %>
+
+				<%= f.label :sku %>
+				<%= f.text_field :sku, class: 'form-control' %>
+
+				<%= f.label :part_number %>
+				<%= f.text_field :part_number, class: 'form-control' %>
+
+				<%= f.label :name %>
+				<%= f.text_field :name, class: 'form-control' %>
+
+				<%= f.label :unit %>
+				<%= f.text_field :unit, class: 'form-control' %>
+
+				<%= f.label :price %>
+				<%= f.text_field :price, class: 'form-control' %>
+
+				<%= f.submit yield(:btn_title), class: "btn btn-primary" %>
+
+			<% end %>
+		
+		</div>
+	
+	</div>
+</div>
