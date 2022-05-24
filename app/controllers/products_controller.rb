@@ -36,6 +36,12 @@ class ProductsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@product = Product.find(params[:id])
+		@product.destroy
+			redirect_to products_url, info: "Item deleted", status: :see_other
+	end
+
 	private
 
 		def product_params
