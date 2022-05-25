@@ -1,9 +1,9 @@
-<% if @product.errors.any? %>
+<% if @error_var.errors.any? %>
   <div id="error_explanation">
-    <h3><%= pluralize(@product.errors.count, "error") %></h3>
+    <h3><%= pluralize(@error_var.errors.count, "error") %></h3>
 
     <ul>
-      <% @product.errors.each do |error| %>
+      <% @error_var.errors.each do |error| %>
         <li><%= error.full_message %></li>
       <% end %>
     </ul>
